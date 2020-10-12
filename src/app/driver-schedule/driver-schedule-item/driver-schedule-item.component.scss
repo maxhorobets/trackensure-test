@@ -1,0 +1,41 @@
+.schedule-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+
+  .schedule-details {
+    .schedule-details-name, .schedule-details-time {
+      font-size: 18px;
+      color: #333333;
+      margin: 0 0 20px 0;
+      font-weight: 300;
+
+      span {
+        font-size: 20px;
+        font-weight: 500;
+
+        &.colored {
+          color: #4caf4c;
+        }
+      }
+    }
+
+    .change-time-form {
+      .start-time-editor, .end-time-editor {
+        margin-bottom: 20px;
+      }
+
+      .save-changes-btn {
+        padding: 10px 30px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-item {
+    grid-template-columns: 1fr;
+  }
+}

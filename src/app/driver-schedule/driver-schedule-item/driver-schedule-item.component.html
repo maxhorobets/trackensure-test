@@ -1,0 +1,61 @@
+<article class="schedule-item">
+  <section class="schedule-details">
+    <h2 class="schedule-details-name">
+      Selected event: 
+      <span class="colored">
+        {{ scheduleItem?.typeFormatted }}
+      </span>
+    </h2>
+    
+    <h3 class="schedule-details-time">
+      Start time: <span>{{ scheduleItem.startTimeFormatted }}</span>
+    </h3>
+    
+    <h3 class="schedule-details-time">
+      End time: <span>{{ scheduleItem.endTimeFormatted }}</span>
+    </h3>
+
+    <form autocomplete="off" class="change-time-form" [formGroup]="changeTimeForm">
+      <div class="start-time-editor">
+        <span class="schedule-details-time">
+          Change start time:
+        </span>
+
+        <input 
+          type="datetime-local" 
+          name="event-time" 
+          formControlName="startTimeInput" 
+          [value]="scheduleItem.startTimeISO"
+          [min]="scheduleItem.startTimeISO" 
+          [max]="scheduleItem.endTimeISO"
+        >
+      </div>
+
+      <div class="end-time-editor">
+        <span class="schedule-details-time">
+          Change end time:
+        </span>
+
+        <input 
+          type="datetime-local" 
+          name="event-time" 
+          formControlName="endTimeInput" 
+          [value]="scheduleItem.endTimeISO"
+          [min]="scheduleItem.startTimeISO" 
+          [max]="scheduleItem.endTimeISO"
+        >
+      </div>
+
+      <button
+        class="save-changes-btn"
+        (click)="saveTimeChanges()"
+      >
+        Save
+      </button>
+    </form>
+  </section>
+
+  <section class="schedule-map">
+    <div #googleMap style="width:100%; height:300px"></div>
+  </section>
+</article>

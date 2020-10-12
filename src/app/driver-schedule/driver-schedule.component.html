@@ -1,0 +1,26 @@
+<article #chartContainer class="schedule-page">
+
+  <h1 class="schedule-page-title">
+    Driver schedule
+  </h1>
+
+  <p class="schedule-page-descr">
+    (click on areas on the chart to see details)
+  </p>
+
+  <google-chart
+    #chart
+    [type]="type"
+    [data]="data"
+    [options]="options"
+    [width]="width"
+    [height]="height"
+    (select)="onSelect($event)"
+  ></google-chart>
+  
+  <app-driver-schedule-item 
+    *ngIf="selectedDriverScheduleItem && isSelected" 
+    [scheduleItem]="selectedDriverScheduleItem"
+    (update)="onUpdateItem($event)"
+  ></app-driver-schedule-item>
+</article>

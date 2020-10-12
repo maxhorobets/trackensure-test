@@ -1,0 +1,22 @@
+.schedule-page {
+  max-width: 768px;
+  margin: 0 auto;
+
+  .schedule-page-title {
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    margin: 20px 0 5px 0;
+  }
+
+  .schedule-page-descr {
+    text-align: center;
+    font-size: 14px;
+    color: #333333;
+    margin: 0 0 20px 0;
+  }
+  
+  google-chart {
+    margin: 0 auto;
+  }
+}
